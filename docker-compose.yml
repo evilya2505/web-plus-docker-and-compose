@@ -14,6 +14,7 @@ services:
       - .env
     depends_on:
       - postgres
+    restart: on-failure
 
   frontend:
     container_name: compose-front-container
@@ -25,6 +26,7 @@ services:
       - frontend
     ports: 
       - 8081:80
+    restart: on-failure
 
   postgres:
     container_name: postgres
@@ -35,6 +37,7 @@ services:
       - postgres_data:/data/postgres
     env_file:
       - .env
+    restart: on-failure
 
   adminer:
     networks:
@@ -45,6 +48,7 @@ services:
       - 3005:8080
     depends_on:
       - postgres
+    restart: on-failure
 
 networks:
   frontend:
