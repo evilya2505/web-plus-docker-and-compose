@@ -3,7 +3,7 @@ services:
   backend:
     container_name: compose-back-container
     build: 
-      context: backend
+      context: ./backend
       dockerfile: Dockerfile
     image: compose-back-optimal-image
     networks:
@@ -18,7 +18,7 @@ services:
   frontend:
     container_name: compose-front-container
     build: 
-      context: frontend
+      context: ./frontend
       dockerfile: Dockerfile
     image: compose-front-optimal-image
     networks:
